@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "f510d899-b12c-43a8-b941-1c854cda9fcc",
+		"name": "GoMockProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3353748"
+	},
+	"item": [
+		{
+			"name": "Customer API",
+			"item": [
+				{
+					"name": "Create customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"thindv\",\r\n    \"password\": \"123456\",\r\n    \"firstName\": \"Do\",\r\n    \"lastName\": \"Thin\",\r\n    \"address\": \"address\",\r\n    \"email\": \"test@mail.com\",\r\n    \"phoneNumber\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/api/customer/create-customer",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"customer",
+								"create-customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"thindv\",\r\n    \"firstName\": \"Do\",\r\n    \"lastName\": \"Thin\",\r\n    \"address\": \"address-update\",\r\n    \"email\": \"test@mail.com\",\r\n    \"phoneNumber\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/api/customer/update-customer",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"customer",
+								"update-customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking API",
+			"item": []
+		},
+		{
+			"name": "Flight API",
+			"item": [
+				{
+					"name": "localhost:8081/api/flight/ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/flight/ping",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"flight",
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Flight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"originAirportCode\":\"HAN\",\r\n    \"destinationAirportCode\": \"SGN\",\r\n    \"departureDateTime\": \"2022-22-12 12:00:00\",\r\n    \"bookingClass\": \"X\",\r\n    \"flightNumber\": \"123\",\r\n    \"flightDuration\": 2,\r\n    \"seatRemaining\": 4,\r\n    \"currencyCode\": \"VND\",\r\n    \"price\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/flight/create-flight",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"flight",
+								"create-flight"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -34,6 +34,7 @@ func main() {
 
 	routerGroup.GET("/ping", flightApiHandler.PingFlightHandler)
 	routerGroup.POST("/create-flight", flightApiHandler.CreateFlightHandler)
+	routerGroup.PUT("/update-flight", flightApiHandler.UpdateFlightHandler)
 
 	err = engine.Run(fmt.Sprintf("127.0.0.1:%v", config.Server.Port))
 	if err != nil {
