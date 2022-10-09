@@ -1,0 +1,50 @@
+syntax = "proto3";
+package pb;
+option go_package = 'thindv/golang-mock/pb';
+
+import "google/protobuf/timestamp.proto";
+
+service CustomerGrpc{
+    rpc PingCustomerGrpc(GrpcPingCustomerGrpcRequest) returns (GrpcPingCustomerGrpcResponse) {}
+    rpc CreateCustomer(GrpcCreateCustomerRequest) returns (GrpcCreateCustomerResponse){}
+    rpc UpdateCustomer(GrpcUpdateCustomerRequest) returns (GrpcUpdateCustomerResponse){}
+ }
+
+message GrpcPingCustomerGrpcRequest {
+    string status     =1;
+}
+
+message GrpcPingCustomerGrpcResponse {
+    string status     =1;
+}
+
+message GrpcCreateCustomerRequest {
+    string username     =1;
+    string password     =2;
+    string first_name   =3;
+    string last_name    =4;
+    string address      =5;
+    string email        =6;
+    string phone_number =7;
+}
+
+message GrpcCreateCustomerResponse {
+    string status                           =1;
+    string username                         =2;
+    bool active                             =3;
+    google.protobuf.Timestamp create_at     =4;
+}
+
+message GrpcUpdateCustomerRequest {
+    string username     =1;
+    string password     =2;
+    string first_name   =3;
+    string last_name    =4;
+    string address      =5;
+    string email        =6;
+    string phone_number =7;
+}
+
+message GrpcUpdateCustomerResponse {
+    string status                           =1;
+}

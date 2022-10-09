@@ -1,0 +1,18 @@
+version: '3.8'
+
+networks:
+  go-app:
+    driver: bridge
+
+services:
+  app:
+    container_name: golang-api
+    build: .
+    restart: on-failure
+    volumes:
+      - ./api:/usr/src/app/
+    ports:
+    - "8080:8080"
+    networks:
+      - go-app
+  
